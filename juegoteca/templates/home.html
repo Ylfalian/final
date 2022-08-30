@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'juegoteca/gamer.jpg' %}" alt="">
+    </div>
+
+    <div class="col-md-8 my-auto">
+        <h1> Recomendaciones de Juegos </h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet est ut orci cursus sollicitudin eu vel dui. Praesent fermentum sit amet risus et porttitor. Cras in vestibulum felis. Suspendisse semper magna ut tortor facilisis, nec pretium justo fermentum. Fusce urna leo, accumsan sit amet dui eget, feugiat blandit ipsum. Pellentesque congue placerat tempor. Phasellus tempus mattis tellus eget mollis. Curabitur tincidunt efficitur egestas. Nam sed accumsan orci, vitae semper augue. Nulla non finibus tortor. Sed erat diam, volutpat in finibus euismod, efficitur elementum enim.
+
+            Etiam eros elit, aliquam vitae purus ut, malesuada fringilla velit. Morbi metus nulla, viverra nec eros sit amet, laoreet tincidunt nulla. Nulla hendrerit orci vel tempor commodo. Curabitur nisl sem, imperdiet ut risus ac, pellentesque sollicitudin augue. Mauris consectetur nulla non ligula pulvinar vulputate. Integer sodales libero rutrum arcu ullamcorper aliquam. Praesent quis ornare erat. Aliquam posuere non est quis suscipit. Duis mauris velit, ullamcorper non consequat sed, blandit nec mi. Aliquam ac suscipit ipsum. Praesent pellentesque, felis a sodales laoreet, leo dui volutpat tortor, in placerat leo metus eget libero. Suspendisse condimentum cursus nunc id commodo. Fusce a est fringilla, commodo lacus id, ultricies nunc. Etiam in tortor tincidunt, elementum nibh eget, cursus quam.
+        </p>   
+    </div>
+
+</header>
+
+
+
+<div class="row my-4 text-center">
+    
+    <h3> Mis Recomendaciones</h3>
+
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    
+    {% for juego in Juego %}
+
+    <div class="col-md-4 p-4">
+        <div class="card bg-black card-project">
+            <img src="{{juego.imagen.url}}" alt="{{juego.titulo}}"class="card-img-top">
+            <div class="card-body">
+                <h2>{{juego.titulo}}</h2>
+                <p>{{juego.descripcion}}</p>
+                <a href="{{juego.url}}" target="_blank" >{{juego.url}}</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+    {% endblock %}
+</div>

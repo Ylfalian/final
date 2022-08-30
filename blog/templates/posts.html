@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>posts</h1>
+
+{% for Post in Posts %}
+
+<div class="p-3">
+    <div class="card card-body bg-black">
+        <div class="row">
+            <div class="col-3">
+                <img src="{{Post.imange.url}}" alt="{{Post.titulos}}" class="img-fluid"/>
+            </div>
+            <div class="col-9">
+                <h2>{{Post.titulo}}</h2>
+                <p>{{Post.descipcion |striptags|truncatechars:100}}</p>
+                <p>{{Post.fecha|date:'M d Y'| upper}}</p>
+            </div>
+        </div>
+
+        <h2>{{Post.titulo}}</h2>
+        <p>{{Post.descipcion |striptags|truncatechars:100}}</p>
+        <p>{{Post.fecha|date:'M d Y'| upper}}</p>
+
+    </div>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

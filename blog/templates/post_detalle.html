@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{Post.titulo}}</h2>
+<p>{{Post.descipcion|safe}}</p>
+<img src="{{Post.imange.url}}" alt="{{Post.titulos}}">
+
+{% endblock %}
